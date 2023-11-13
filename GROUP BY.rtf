@@ -1,0 +1,23 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 1,\
+SELECT YEAR(`enrolment_date`) AS `enrolment_year`, COUNT(*) AS `enrolment_count`\
+FROM `students`\
+GROUP BY `enrolment_year`;\
+\
+2,\
+SELECT `office_address`, COUNT(*) AS `teacher_count`\
+FROM `teachers`\
+GROUP BY `office_address`\
+HAVING COUNT(*) > 1;\
+\
+3,\
+SELECT `exam_id`, AVG(`vote`) AS `average_grade`\
+FROM `exam_student`\
+GROUP BY `exam_id`;\
+}
