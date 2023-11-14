@@ -2,7 +2,7 @@
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\paperw11900\paperh16840\margl1440\margr1440\vieww19840\viewh11100\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 1, \
@@ -12,7 +12,7 @@ WHERE YEAR(date_of_birth)= 1990\
 \
 2,\
 SELECT * \
-FROM `courses` \
+FROM `courses` \ 
 WHERE `cfu` > 10\
 \
 3,\
@@ -21,13 +21,15 @@ FROM `students`\
 WHERE DATEDIFF(CURDATE(), date_of_birth) / 365 > 30;\
 \
 4,\
-\
+SELECT `name`, `period`, `year`\
+FROM `courses`\
+WHERE `year` = 1 AND `period` = `I semestre`\
 \
 \
 5,\
 SELECT *\
 FROM `exams`\
-WHERE `date` = '2020-06-20' AND `hour` > '14:00';\
+WHERE `date` = '2020-06-20' AND `hour` >= '14:00';\
 \
 6, \
 SELECT *\
